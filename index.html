@@ -5,8 +5,23 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1 id="title" class="helloTitle">Grab me!</h1>
-    <h1 class="helloTitle">Grab me!</h1>
+    <form class="login-form">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="What is your name?"
+      />
+      <button>Log in</button>
+    </form>
+    <div class="main-content">
+      <div class="clock-container">
+        <h5 class="ampm">AM</h5>
+        <h1 id="clock"></h1>
+      </div>
+
+      <h1 class="hidden" id="greeting"></h1>
+    </div>
 
     <script src="./app.js"></script>
   </body>
