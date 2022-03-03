@@ -1,4 +1,5 @@
-const loginForm = document.querySelector(".login-form");
+const loginForm = document.querySelector("#login-form");
+const todoForm = document.querySelector("#todo-form");
 const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector("button");
 const greeting = document.querySelector("#greeting");
@@ -10,6 +11,7 @@ let greetingString = "";
 
 if (username) {
   loginForm.classList.add(HIDDEN_CLASSNAME);
+  todoForm.classList.remove(HIDDEN_CLASSNAME);
   greeting.innerText = "Hello, " + username + ".";
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }

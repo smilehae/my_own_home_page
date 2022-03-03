@@ -16,7 +16,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 50%;
+  width: 80%;
   margin: auto;
   text-align: center;
   color: white;
@@ -38,4 +38,33 @@ body {
   position: absolute;
   top: 0px;
   z-index: -1;
+}
+form input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid gainsboro;
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-size: 1.6rem;
+}
+form input:focus {
+  outline: none;
+}
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+form button {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+form ::placeholder {
+  color: white;
+}
+#quote {
+  margin-top: 2rem;
 }

@@ -5,21 +5,21 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <form class="login-form">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <button>Log in</button>
-    </form>
     <div class="main-content">
       <div class="clock-container">
         <h5 class="ampm">AM</h5>
         <h1 id="clock"></h1>
       </div>
-      <form id="todo-form">
+      <form id="login-form">
+        <input
+          required
+          maxlength="15"
+          type="text"
+          placeholder="What is your name?"
+        />
+        <button>Log in</button>
+      </form>
+      <form id="todo-form" class="hidden">
         <input
           type="text"
           placeholder="Write a To Do and Press Enter."
