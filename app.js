@@ -6,7 +6,7 @@ const clock = document.querySelector("#clock");
 const HIDDEN_CLASSNAME = "hidden";
 
 let username = localStorage.getItem("username") || "";
-let greetingString = "Good Morning";
+let greetingString = "";
 
 if (username) {
   loginForm.classList.add(HIDDEN_CLASSNAME);
@@ -27,13 +27,16 @@ setInterval(() => {
   let hour = today.getHours();
   let timeString = "";
 
-  if (hour >= 12 && hour < 17) {
+  if (hour < 12) {
+    greetingString = "Good Morning";
+  } else if (hour < 17) {
     greetingString = "Good Afternoon";
   } else if (hour < 21) {
     greetingString = "Good Evening";
   } else if (hour < 24) {
-    greeting = "Good Night";
+    greetingString = "Good Night";
   }
+
   if (hour > 12) {
     hour = hour - 12;
     ampmString.textContent = "PM";
@@ -45,6 +48,7 @@ setInterval(() => {
     today.getMinutes()
   )}`;
 
+  greeting.textContent = `${greetingString}, ${username}.`;
   clock.textContent = timeString;
 }, 1000);
 
