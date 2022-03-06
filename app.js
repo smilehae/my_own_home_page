@@ -7,12 +7,11 @@ const clock = document.querySelector("#clock");
 const HIDDEN_CLASSNAME = "hidden";
 
 let username = localStorage.getItem("username") || "";
-let greetingString = "";
 
 if (username) {
   loginForm.classList.add(HIDDEN_CLASSNAME);
   todoForm.classList.remove(HIDDEN_CLASSNAME);
-  greeting.innerText = "Hello, " + username + ".";
+  greeting.innerText = "좋은 하루 보내세요, " + username + "님.";
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
@@ -23,7 +22,27 @@ function getClock() {
   clock.textContent = `${hours}:${minutes}`;
 }
 
+function getGreeting() {
+  const hour = new Date().getHours();
+  let greetingText = "좋은 하루 보내세요,";
+  console.log(hour);
+  if (hour < 12) {
+    greetingText = "좋은 아침이에요,";
+  } else if (hour < 18) {
+    greetingText = "좋은 오후에요,";
+  } else if (hour < 22) {
+    greetingText = "좋은 저녁이에요,";
+  } else {
+    greetingText = "좋은 밤 보내세요,";
+  }
+  greetingText += ` ${username}님.`;
+  greeting.innerText = greetingText;
+}
+
+getClock();
+getGreeting();
 setInterval(getClock, 1000);
+setInterval(getGreeting, 3600000);
 
 //eventListner에서 어떤 함수를 실행하든 간에, event에 대한 정보를 전달한다. preventDefault는 default인 행동을 막는 것이다.
 loginForm.addEventListener("submit", (e) => {
