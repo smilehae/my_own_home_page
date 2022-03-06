@@ -1,16 +1,14 @@
 const loginForm = document.querySelector("#login-form");
-const todoForm = document.querySelector("#todo-form");
-const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
 const greeting = document.querySelector("#greeting");
 const clock = document.querySelector("#clock");
 const HIDDEN_CLASSNAME = "hidden";
+const goalForm = document.querySelector("#goal-form");
 
 let username = localStorage.getItem("username") || "";
 
 if (username) {
   loginForm.classList.add(HIDDEN_CLASSNAME);
-  todoForm.classList.remove(HIDDEN_CLASSNAME);
+  goalForm.classList.remove(HIDDEN_CLASSNAME);
   greeting.innerText = "좋은 하루 보내세요, " + username + "님.";
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
@@ -44,14 +42,17 @@ function getGreeting() {
 
 getClock();
 getGreeting();
+
 setInterval(getClock, 1000);
 setInterval(getGreeting, 3600000);
 
 //eventListner에서 어떤 함수를 실행하든 간에, event에 대한 정보를 전달한다. preventDefault는 default인 행동을 막는 것이다.
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const username = loginInput.value;
+  const loginInput = loginForm.querySelector("input");
+  username = loginInput.value;
   loginForm.classList.add(HIDDEN_CLASSNAME);
   greeting.classList.remove(HIDDEN_CLASSNAME);
   localStorage.setItem("username", username);
+  getGreeting();
 });
