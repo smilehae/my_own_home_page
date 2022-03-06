@@ -5,15 +5,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const goalForm = document.querySelector("#goal-form");
 
 let username = localStorage.getItem("username") || "";
-
-function checkUsernameStatus() {
-  if (username) {
-    loginForm.classList.add(HIDDEN_CLASSNAME);
-    goalForm.classList.remove(HIDDEN_CLASSNAME);
-    getGreeting();
-    greeting.classList.remove(HIDDEN_CLASSNAME);
-  }
-}
+let goal = localStorage.getItem("goal") || "";
 
 function getClock() {
   const date = new Date();
@@ -41,6 +33,27 @@ function getGreeting() {
   greeting.innerText = greetingText;
 }
 
+function setGoal(val) {
+  const input = goalForm.querySelector("input");
+  const goalPos = goalForm.querySelector("h3");
+  const asking = goalForm.querySelector("h5");
+  asking.innerText = "TODAY";
+  goalPos.innerText = val;
+  input.classList.add(HIDDEN_CLASSNAME);
+}
+
+function checkUsernameStatus() {
+  if (username) {
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    goalForm.classList.remove(HIDDEN_CLASSNAME);
+    getGreeting();
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+  }
+  if (goal) {
+    setGoal(goal);
+  }
+}
+
 getClock();
 checkUsernameStatus();
 
@@ -61,9 +74,6 @@ loginForm.addEventListener("submit", (e) => {
 goalForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const input = goalForm.querySelector("input");
-  const goalPos = goalForm.querySelector("h3");
-  const asking = goalForm.querySelector("h5");
-  asking.innerText = "TODAY";
-  goalPos.innerText = input.value;
-  input.classList.add(HIDDEN_CLASSNAME);
+  setGoal(input.value);
+  localStorage.setItem("goal", input.value);
 });
