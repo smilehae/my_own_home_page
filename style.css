@@ -9,7 +9,7 @@
 }
 
 body {
-  background: linear-gradient(#e66465, #9198e5);
+  background: black;
   min-height: 100vh;
   box-sizing: border-box;
   display: flex;
@@ -40,6 +40,7 @@ body {
   position: absolute;
   top: 0px;
   z-index: -1;
+  filter: opacity(0.8);
 }
 form input {
   background-color: rgba(0, 0, 0, 0);
