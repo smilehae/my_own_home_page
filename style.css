@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Gowun+Dodum&family=Handlee&display=swap");
 * {
   padding: 0;
   margin: 0;
+  font-family: "Gowun Dodum", sans-serif;
 }
 .hidden {
   display: none;
@@ -68,6 +69,7 @@ form ::placeholder {
 }
 #quote {
   margin-top: 2rem;
+  font-family: "Handlee", cursive;
 }
 #weather {
   font-family: "Amatic SC", cursive;
