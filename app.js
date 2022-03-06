@@ -23,10 +23,13 @@ function getClock() {
 }
 
 function getGreeting() {
+  console.log("greeting 업데이트");
   const hour = new Date().getHours();
   let greetingText = "좋은 하루 보내세요,";
   console.log(hour);
-  if (hour < 12) {
+  if (hour < 8) {
+    greetingText = "좋은 새벽이에요,";
+  } else if (hour < 12) {
     greetingText = "좋은 아침이에요,";
   } else if (hour < 18) {
     greetingText = "좋은 오후에요,";
