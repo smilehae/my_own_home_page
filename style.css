@@ -13,20 +13,29 @@ body {
   background: black;
   min-height: 100vh;
   box-sizing: border-box;
-  display: flex;
-}
-.main-content {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 80%;
-  margin: auto;
-  text-align: center;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
-.main-content #clock {
-  font-size: 8rem;
+header {
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+main {
+  padding: 1rem;
+}
+footer {
+  padding: 1rem;
+}
+#weather > span {
+  font-family: "Amatic SC", cursive;
+  font-size: 2rem;
+}
+#clock {
+  font-size: 9rem;
 }
 .clock-container {
   display: flex;
@@ -85,23 +94,27 @@ form button:hover {
 form ::placeholder {
   color: white;
 }
+.time {
+  text-align: center;
+  padding-top: 13rem;
+}
+#goal-form {
+  padding-top: 2rem;
+  height: 100%;
+}
+#goal-form h3 {
+  margin-top: 0.5rem;
+}
 #quote {
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 #quote > span {
   margin-top: 2rem;
   font-family: "Handlee", cursive;
   margin: 0.5rem;
-}
-#weather {
-  font-family: "Amatic SC", cursive;
-  font-size: 2rem;
-}
-#goal-form {
-  margin-top: 2rem;
-}
-#goal-form h3 {
-  margin-top: 0.5rem;
+  font-size: 1.2rem;
 }

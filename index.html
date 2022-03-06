@@ -5,41 +5,42 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="main-content">
+    <header>
       <div id="weather">
         <span></span>
         <span></span>
       </div>
-      <div class="clock-container">
-        <h5 class="ampm">AM</h5>
-        <h1 id="clock"></h1>
+    </header>
+    <main>
+      <div class="time">
+        <div class="clock-container">
+          <h4 class="ampm">AM</h4>
+          <h1 id="clock"></h1>
+        </div>
+        <h1 class="hidden" id="greeting"></h1>
       </div>
+
       <form id="login-form">
         <h3>이름이 어떻게 되시나요?</h3>
         <input required maxlength="15" type="text" />
         <button>Log in</button>
       </form>
 
-      <h1 class="hidden" id="greeting"></h1>
-
       <form id="goal-form" class="hidden">
         <h5>오늘의 주요 목표는 무엇인가요?</h5>
         <input type="text" />
         <h3></h3>
       </form>
-      <!-- <form id="todo-form" class="hidden">
-        <input
-          type="text"
-          placeholder="Write a To Do and Press Enter."
-          required
-        />
-      </form> -->
+    </main>
+
+    <footer>
       <ul id="todo-list"></ul>
       <div id="quote">
         <span></span>
         <span></span>
       </div>
-    </div>
+    </footer>
+
     <script src="./config.js"></script>
     <script src="./app.js"></script>
     <script src="./quotes.js"></script>
