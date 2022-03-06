@@ -6,11 +6,13 @@ const goalForm = document.querySelector("#goal-form");
 
 let username = localStorage.getItem("username") || "";
 
-if (username) {
-  loginForm.classList.add(HIDDEN_CLASSNAME);
-  goalForm.classList.remove(HIDDEN_CLASSNAME);
-  greeting.innerText = "좋은 하루 보내세요, " + username + "님.";
-  greeting.classList.remove(HIDDEN_CLASSNAME);
+function checkUsernameStatus() {
+  if (username) {
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    goalForm.classList.remove(HIDDEN_CLASSNAME);
+    getGreeting();
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+  }
 }
 
 function getClock() {
@@ -24,7 +26,6 @@ function getGreeting() {
   console.log("greeting 업데이트");
   const hour = new Date().getHours();
   let greetingText = "좋은 하루 보내세요,";
-  console.log(hour);
   if (hour < 8) {
     greetingText = "좋은 새벽이에요,";
   } else if (hour < 12) {
@@ -41,7 +42,7 @@ function getGreeting() {
 }
 
 getClock();
-getGreeting();
+checkUsernameStatus();
 
 setInterval(getClock, 1000);
 setInterval(getGreeting, 3600000);
@@ -54,5 +55,5 @@ loginForm.addEventListener("submit", (e) => {
   loginForm.classList.add(HIDDEN_CLASSNAME);
   greeting.classList.remove(HIDDEN_CLASSNAME);
   localStorage.setItem("username", username);
-  getGreeting();
+  checkUsernameStatus();
 });

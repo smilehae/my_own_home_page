@@ -85,8 +85,14 @@ form ::placeholder {
   color: white;
 }
 #quote {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+#quote > span {
   margin-top: 2rem;
   font-family: "Handlee", cursive;
+  margin: 0.5rem;
 }
 #weather {
   font-family: "Amatic SC", cursive;
