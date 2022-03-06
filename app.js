@@ -57,3 +57,13 @@ loginForm.addEventListener("submit", (e) => {
   localStorage.setItem("username", username);
   checkUsernameStatus();
 });
+
+goalForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const input = goalForm.querySelector("input");
+  const goalPos = goalForm.querySelector("h3");
+  const asking = goalForm.querySelector("h5");
+  asking.innerText = "TODAY";
+  goalPos.innerText = input.value;
+  input.classList.add(HIDDEN_CLASSNAME);
+});

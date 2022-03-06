@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   font-family: "Gowun Dodum", sans-serif;
+  transition: all 0.2s;
 }
 .hidden {
   display: none;
@@ -100,4 +101,7 @@ form ::placeholder {
 }
 #goal-form {
   margin-top: 2rem;
+}
+#goal-form h3 {
+  margin-top: 0.5rem;
 }
