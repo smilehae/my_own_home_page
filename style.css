@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Gowun+Dodum&family=Handlee&display=swap");
+@font-face {
+  font-family: "IM_Hyemin-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Regular.woff2")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -30,9 +38,25 @@ main {
 footer {
   padding: 1rem;
 }
+#weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 #weather > span {
-  font-family: "Amatic SC", cursive;
-  font-size: 2rem;
+  font-family: "IM_Hyemin-Regular", cursive;
+  font-size: 1.6rem;
+}
+#weather span:nth-child(2) {
+  font-size: 1rem;
+  position: relative;
+  top: -0.5rem;
+}
+#weather span:last-child {
+  font-size: 1rem;
+  opacity: 0.9;
 }
 #clock {
   font-size: 9rem;

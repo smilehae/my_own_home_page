@@ -10,12 +10,19 @@ function onGeoOK(position) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const weather = document.querySelector("#weather span:first-child");
+      const weatherIcon = document.querySelector("#weather img");
+      const weather = document.querySelector("#weather span:nth-child(2)");
+      const temp = document.querySelector("#weather span:nth-child(3)");
       const region = document.querySelector("#weather span:last-child");
+      weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
       weather.innerText = data.weather[0].main;
+      temp.innerText = data.main.temp + "℃";
       region.innerText = data.name;
 
-      console.log(data.name, data.weather[0].main);
+      console.log(data, data.weather[0].main);
+      console.log(
+        `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+      );
     });
 }
 
