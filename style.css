@@ -44,6 +44,7 @@ footer {
   justify-content: center;
 }
 .back-img {
+  background: url("./img/0.jpg") center;
   background-size: cover;
   width: 100%;
   height: 100%;
