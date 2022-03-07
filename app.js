@@ -3,13 +3,16 @@ const greeting = document.querySelector("#greeting");
 const clock = document.querySelector("#clock");
 const HIDDEN_CLASSNAME = "hidden";
 const goalForm = document.querySelector("#goal-form");
+const ampm = document.querySelector(".ampm");
 
 let username = localStorage.getItem("username") || "";
 let goal = localStorage.getItem("goal") || "";
 
 function getClock() {
   const date = new Date();
-  const hours = String(date.getHours()).padStart(2, "0");
+  const hours = String(
+    date.getHours() > 12 ? date.getHours() - 12 : date.getHours()
+  ).padStart(2, "0");
   const minutes = String(date.getMinutes()).padStart(2, "0");
   clock.textContent = `${hours}:${minutes}`;
 }
@@ -31,6 +34,10 @@ function getGreeting() {
   }
   greetingText += ` ${username}님.`;
   greeting.innerText = greetingText;
+
+  if (hour > 12) {
+    ampm.innerText = "PM";
+  }
 }
 
 function setGoal(val) {

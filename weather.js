@@ -1,7 +1,6 @@
 const apiKey = weatherAPI;
 
 function onGeoOK(position) {
-  console.log(position);
   const [latitude, longitude] = [
     position.coords.latitude,
     position.coords.longitude,
@@ -18,11 +17,6 @@ function onGeoOK(position) {
       weather.innerText = data.weather[0].main;
       temp.innerText = data.main.temp + "℃";
       region.innerText = data.name;
-
-      console.log(data, data.weather[0].main);
-      console.log(
-        `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
-      );
     });
 }
 
