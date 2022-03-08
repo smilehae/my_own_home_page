@@ -8,14 +8,14 @@ backgroundImg.style.background = `url(./img/1.jpg) center`;
 backgroundImg.classList.add("back-img");
 document.body.appendChild(backgroundImg);
 
-fetch("https://api.unsplash.com/photos/random?topic=wallpepers", {
-  method: "GET",
-  headers: {
-    Authorization: `Client-ID ${splashApi}`,
-  },
-})
-  .then((response) => response.json())
-  .then(
-    (myJson) =>
-      (backgroundImg.style.background = `url(${myJson.urls.full}) center`)
-  );
+// fetch("https://api.unsplash.com/photos/random?topic=wallpepers", {
+//   method: "GET",
+//   headers: {
+//     Authorization: `Client-ID ${splashApi}`,
+//   },
+// })
+//   .then((response) => response.json())
+//   .then(
+//     (myJson) =>
+//       (backgroundImg.style.background = `url(${myJson.urls.full}) center`)
+//   );

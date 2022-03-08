@@ -126,10 +126,13 @@ form ::placeholder {
 #goal-form {
   padding-top: 2rem;
   height: 100%;
+  position: relative;
 }
 #goal-form h3 {
   margin-top: 0.5rem;
+  cursor: pointer;
 }
+
 #quote {
   display: flex;
   flex-direction: column;
@@ -142,4 +145,19 @@ form ::placeholder {
   font-family: "Handlee", cursive;
   margin: 0.5rem;
   font-size: 1.2rem;
+}
+.tool-box {
+  background-color: rgba(255, 255, 255, 0.712);
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -3rem;
+  left: 10rem;
+  color: black;
+  font-weight: bold;
+}
+.tool-box > span:first-child {
+  border-bottom: 1px solid gray;
 }

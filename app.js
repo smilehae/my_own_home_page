@@ -4,6 +4,7 @@ const clock = document.querySelector("#clock");
 const HIDDEN_CLASSNAME = "hidden";
 const goalForm = document.querySelector("#goal-form");
 const ampm = document.querySelector(".ampm");
+const goalToolbox = document.querySelector(".tool-box");
 
 let username = localStorage.getItem("username") || "";
 let goal = localStorage.getItem("goal") || "";
