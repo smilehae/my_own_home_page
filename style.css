@@ -164,7 +164,7 @@ form ::placeholder {
   align-items: center;
   margin: 0;
   position: absolute;
-  left: 8rem;
+  right: 0rem;
   top: 0rem;
 }
 .goal-container button.hidden {
