@@ -12,6 +12,7 @@
   margin: 0;
   font-family: "Gowun Dodum", sans-serif;
   transition: all 0.2s;
+  box-sizing: border-box;
 }
 .hidden {
   display: none;
@@ -21,15 +22,17 @@
   transition: all 0s;
   visibility: hidden;
 }
-
+html {
+  min-height: 100vh;
+}
 body {
   background: black;
   min-height: 100vh;
-  box-sizing: border-box;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 header {
   font-size: 1rem;
@@ -194,5 +197,20 @@ form ::placeholder {
   content: " |";
 }
 .menu-box span {
+  cursor: pointer;
+}
+
+/* todo */
+.todo {
+  padding: 1rem;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  width: fit-content;
+}
+.todo ul {
+  list-style: none;
+}
+.todo li {
+  margin: 0.5rem 0;
   cursor: pointer;
 }
