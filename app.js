@@ -4,7 +4,7 @@ const clock = document.querySelector("#clock");
 
 const goalForm = document.querySelector("#goal-form");
 const goalContainer = goalForm.querySelector(".goal-container");
-const goalBtn = goalContainer.querySelector("button");
+const goalBtn = goalContainer.querySelector(".btn");
 const goalMenu = goalContainer.querySelector(".menu-box");
 
 const HIDDEN_CLASSNAME = "hidden";

@@ -159,7 +159,7 @@ form ::placeholder {
   position: relative;
   padding: 0 3rem;
 }
-.goal-container button {
+.goal-container .btn {
   border: none;
   background-color: rgba(0, 0, 0, 0);
   height: 3rem;
@@ -171,11 +171,11 @@ form ::placeholder {
   position: absolute;
   right: 0rem;
   top: 0rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
-.goal-container button.hidden {
-  display: none;
-}
-.goal-container button:hover {
+
+.goal-container .btn:hover {
   background-color: rgba(0, 0, 0, 0);
   color: white;
 }
