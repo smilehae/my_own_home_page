@@ -1,11 +1,14 @@
 const loginForm = document.querySelector("#login-form");
 const greeting = document.querySelector("#greeting");
 const clock = document.querySelector("#clock");
-const HIDDEN_CLASSNAME = "hidden";
+
 const goalForm = document.querySelector("#goal-form");
-const ampm = document.querySelector(".ampm");
-const goalToolbox = document.querySelector(".tool-box");
 const goalContainer = goalForm.querySelector(".goal-container");
+const goalBtn = goalContainer.querySelector("button");
+const goalMenu = goalContainer.querySelector(".menu-box");
+
+const HIDDEN_CLASSNAME = "hidden";
+const CLEAR_CLASSNAME = "clear";
 
 let username = localStorage.getItem("username") || "";
 let goal = localStorage.getItem("goal") || "";
@@ -20,7 +23,7 @@ function getClock() {
 }
 
 function getGreeting() {
-  console.log("greeting 업데이트");
+  const ampm = document.querySelector(".ampm");
   const hour = new Date().getHours();
   let greetingText = "좋은 하루 보내세요,";
   if (hour < 8) {
@@ -45,8 +48,11 @@ function getGreeting() {
 function setGoal(val) {
   const input = goalForm.querySelector("input");
   const asking = goalForm.querySelector("h5");
+  const goalText = goalForm.querySelector("h3");
+
   asking.innerText = "TODAY";
-  goalContainer.innerHTML = `<h3>${val}</h3><button class="hidden"><i class="fa-solid fa-ellipsis fa-bounce"></i></button>`;
+  goalText.innerText = `${val}`;
+
   input.classList.add(HIDDEN_CLASSNAME);
 }
 
@@ -87,11 +93,24 @@ goalForm.addEventListener("submit", (e) => {
 });
 
 goalContainer.addEventListener("mouseenter", () => {
-  const goalBtn = goalContainer.querySelector("button");
-  goalBtn.classList.remove(HIDDEN_CLASSNAME);
+  goalBtn.classList.remove(CLEAR_CLASSNAME);
 });
 
 goalContainer.addEventListener("mouseleave", () => {
-  const goalBtn = goalContainer.querySelector("button");
-  goalBtn.classList.add(HIDDEN_CLASSNAME);
+  goalBtn.classList.add(CLEAR_CLASSNAME);
+});
+
+goalBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  goalMenu.classList.remove(CLEAR_CLASSNAME);
+});
+
+goalMenu.addEventListener("click", (e) => {
+  console.log(e.target.classList);
+  if (e.target.classList.contains("edit_btn")) {
+    console.log("수정버튼");
+  }
+});
+goalMenu.addEventListener("mouseleave", () => {
+  goalMenu.classList.add(CLEAR_CLASSNAME);
 });
