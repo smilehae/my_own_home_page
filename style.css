@@ -151,6 +151,8 @@ form ::placeholder {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding: 0 3rem;
 }
 .goal-container button {
   border: none;
@@ -160,9 +162,13 @@ form ::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 0.5rem;
-  position: relative;
-  top: 5px;
+  margin: 0;
+  position: absolute;
+  left: 8rem;
+  top: 0rem;
+}
+.goal-container button.hidden {
+  display: none;
 }
 .goal-container button:hover {
   background-color: rgba(0, 0, 0, 0);

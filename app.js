@@ -5,6 +5,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const goalForm = document.querySelector("#goal-form");
 const ampm = document.querySelector(".ampm");
 const goalToolbox = document.querySelector(".tool-box");
+const goalContainer = goalForm.querySelector(".goal-container");
 
 let username = localStorage.getItem("username") || "";
 let goal = localStorage.getItem("goal") || "";
@@ -43,10 +44,9 @@ function getGreeting() {
 
 function setGoal(val) {
   const input = goalForm.querySelector("input");
-  const goalContainer = goalForm.querySelector(".goal-container");
   const asking = goalForm.querySelector("h5");
   asking.innerText = "TODAY";
-  goalContainer.innerHTML = `<h3>${val}</h3><button><i class="fa-solid fa-ellipsis fa-bounce"></i></button>`;
+  goalContainer.innerHTML = `<h3>${val}</h3><button class="hidden"><i class="fa-solid fa-ellipsis fa-bounce"></i></button>`;
   input.classList.add(HIDDEN_CLASSNAME);
 }
 
@@ -84,4 +84,14 @@ goalForm.addEventListener("submit", (e) => {
   const input = goalForm.querySelector("input");
   setGoal(input.value);
   localStorage.setItem("goal", input.value);
+});
+
+goalContainer.addEventListener("mouseenter", () => {
+  const goalBtn = goalContainer.querySelector("button");
+  goalBtn.classList.remove(HIDDEN_CLASSNAME);
+});
+
+goalContainer.addEventListener("mouseleave", () => {
+  const goalBtn = goalContainer.querySelector("button");
+  goalBtn.classList.add(HIDDEN_CLASSNAME);
 });
