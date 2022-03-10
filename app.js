@@ -46,7 +46,7 @@ function setGoal(val) {
   const goalContainer = goalForm.querySelector(".goal-container");
   const asking = goalForm.querySelector("h5");
   asking.innerText = "TODAY";
-  goalContainer.innerHTML = `<h3>${val}</h3><button><i class="fas fa-ellipsis-h"></i></button>`;
+  goalContainer.innerHTML = `<h3>${val}</h3><button><i class="fa-solid fa-ellipsis fa-bounce"></i></button>`;
   input.classList.add(HIDDEN_CLASSNAME);
 }
 
