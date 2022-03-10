@@ -43,10 +43,10 @@ function getGreeting() {
 
 function setGoal(val) {
   const input = goalForm.querySelector("input");
-  const goalPos = goalForm.querySelector("h3");
+  const goalContainer = goalForm.querySelector(".goal-container");
   const asking = goalForm.querySelector("h5");
   asking.innerText = "TODAY";
-  goalPos.innerText = val;
+  goalContainer.innerHTML = `<h3>${val}</h3><button><i class="fas fa-ellipsis-h"></i></button>`;
   input.classList.add(HIDDEN_CLASSNAME);
 }
 

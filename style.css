@@ -146,18 +146,25 @@ form ::placeholder {
   margin: 0.5rem;
   font-size: 1.2rem;
 }
-.tool-box {
-  background-color: rgba(255, 255, 255, 0.712);
-  padding: 0.5rem;
-  border-radius: 10px;
+.goal-container {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  top: -3rem;
-  left: 10rem;
-  color: black;
-  font-weight: bold;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-.tool-box > span:first-child {
-  border-bottom: 1px solid gray;
+.goal-container button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+  position: relative;
+  top: 5px;
+}
+.goal-container button:hover {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
 }

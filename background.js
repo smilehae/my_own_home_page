@@ -1,5 +1,5 @@
 const images = ["0.jpg", "1.jpg", "2.jpg"];
-const splashApi = unsplashAPI;
+// const splashApi = unsplashAPI;
 
 const todayImage = images[Math.floor(Math.random() * images.length)];
 
