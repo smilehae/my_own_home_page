@@ -44,7 +44,15 @@ function getGreeting() {
     ampm.innerText = "PM";
   }
 }
-
+function editGoal(val) {
+  const input = goalForm.querySelector("input");
+  const asking = goalForm.querySelector("h5");
+  const goalText = goalForm.querySelector("h3");
+  asking.innerText = "새로운 목표는 어떤 것인가요?";
+  input.value = val;
+  input.classList.remove(HIDDEN_CLASSNAME);
+  goalText.classList.add(HIDDEN_CLASSNAME);
+}
 function setGoal(val) {
   const input = goalForm.querySelector("input");
   const asking = goalForm.querySelector("h5");
@@ -54,6 +62,7 @@ function setGoal(val) {
   goalText.innerText = `${val}`;
 
   input.classList.add(HIDDEN_CLASSNAME);
+  goalText.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function checkUsernameStatus() {
@@ -98,6 +107,7 @@ goalContainer.addEventListener("mouseenter", () => {
 
 goalContainer.addEventListener("mouseleave", () => {
   goalBtn.classList.add(CLEAR_CLASSNAME);
+  goalMenu.classList.add(CLEAR_CLASSNAME);
 });
 
 goalBtn.addEventListener("click", (e) => {
@@ -109,6 +119,7 @@ goalMenu.addEventListener("click", (e) => {
   console.log(e.target.classList);
   if (e.target.classList.contains("edit_btn")) {
     console.log("수정버튼");
+    editGoal(goal);
   }
 });
 goalMenu.addEventListener("mouseleave", () => {
