@@ -120,6 +120,9 @@ goalMenu.addEventListener("click", (e) => {
   if (e.target.classList.contains("edit_btn")) {
     console.log("수정버튼");
     editGoal(goal);
+  } else if (e.target.classList.contains("del_btn")) {
+    editGoal("");
+    localStorage.removeItem("goal");
   }
 });
 goalMenu.addEventListener("mouseleave", () => {
