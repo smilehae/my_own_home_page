@@ -234,3 +234,9 @@ form ::placeholder {
   font-weight: bold;
   color: rgb(255, 255, 232);
 }
+
+.todo .todo-checked span:first-child {
+  background-color: rgba(255, 253, 140, 0.438);
+  color: black;
+  font-weight: bold;
+}
