@@ -18,6 +18,7 @@ function showTodos() {
 document.addEventListener("DOMContentLoaded", () => {
   showTodos();
 });
+
 todoList.addEventListener("submit", (e) => {
   e.preventDefault();
   const input = todoList.querySelector("input");

@@ -6,6 +6,7 @@ const goalForm = document.querySelector("#goal-form");
 const goalContainer = goalForm.querySelector(".goal-container");
 const goalBtn = goalContainer.querySelector(".btn");
 const goalMenu = goalContainer.querySelector(".menu-box");
+const todoContainer = document.querySelector(".todo");
 
 const HIDDEN_CLASSNAME = "hidden";
 const CLEAR_CLASSNAME = "clear";
@@ -71,6 +72,7 @@ function checkUsernameStatus() {
     goalForm.classList.remove(HIDDEN_CLASSNAME);
     getGreeting();
     greeting.classList.remove(HIDDEN_CLASSNAME);
+    todoContainer.classList.remove(CLEAR_CLASSNAME);
   }
   if (goal) {
     setGoal(goal);
