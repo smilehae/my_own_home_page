@@ -129,7 +129,6 @@ form ::placeholder {
 }
 .time {
   text-align: center;
-  padding-top: 13rem;
 }
 #goal-form {
   padding-top: 2rem;
@@ -209,8 +208,16 @@ form ::placeholder {
 }
 .todo ul {
   list-style: none;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 .todo li {
   margin: 0.5rem 0;
   cursor: pointer;
+}
+.todo input {
+  margin-top: 1rem;
+  font-size: 1rem;
+  width: 100%;
 }
