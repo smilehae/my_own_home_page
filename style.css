@@ -230,3 +230,7 @@ form ::placeholder {
 .todo ul::-webkit-scrollbar-thumb {
   background-color: gainsboro;
 }
+.todo span.todo-text:hover {
+  font-weight: bold;
+  color: rgb(255, 255, 232);
+}

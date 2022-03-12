@@ -7,8 +7,11 @@ function showTodos() {
     .map(
       (todo) => `
     <li>
-        <span>${todo}</span>
-    </li>
+        <span class="todo-text ">${todo}</span>
+        <span class="todo-button clear"><i class="fa-solid fa-circle-check"></i></span>
+        <span class="todo-button clear"><i class="fa-solid fa-eraser"></i></span>
+
+        </li>
   `
     )
     .join("");
@@ -26,4 +29,11 @@ todoList.addEventListener("submit", (e) => {
   localStorage.setItem("todos", JSON.stringify(todos));
   showTodos();
   todoList.reset();
+});
+todoList.addEventListener("click", (e) => {
+  if (e.target.matches("span")) {
+    const parent = e.target.parentNode;
+    const btns = Array.from(parent.querySelectorAll(".todo-button"));
+    btns.forEach((btn) => btn.classList.toggle("clear"));
+  }
 });
