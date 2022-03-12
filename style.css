@@ -205,6 +205,7 @@ form ::placeholder {
   border: 1px solid gainsboro;
   border-radius: 10px;
   width: fit-content;
+  position: relative;
 }
 .todo ul {
   list-style: none;
@@ -239,4 +240,27 @@ form ::placeholder {
   background-color: rgba(255, 253, 140, 0.438);
   color: black;
   font-weight: bold;
+}
+.todo .todo-button {
+  color: gainsboro;
+}
+
+.todo.todo-del-state li span:last-child {
+  visibility: visible;
+}
+.todo .todo-setting {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 1.5rem;
+  display: inline-block;
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.todo .todo-setting:hover {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  color: white;
 }
