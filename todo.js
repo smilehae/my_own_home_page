@@ -19,15 +19,9 @@ function showTodos() {
 }
 
 function addTodo(value) {
-  let id = localStorage.getItem("id");
+  let id = new Date().getTime();
   if (!value) return;
-  if (!id) {
-    id = 1;
-    localStorage.setItem("id", "1");
-  } else {
-    id = Number(id) + 1;
-    localStorage.setItem("id", `${id}`);
-  }
+
   const newTodo = {
     id,
     value,
