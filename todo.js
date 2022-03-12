@@ -1,5 +1,5 @@
 const todoList = document.querySelector(".todo");
-const todos = [];
+const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 function showTodos() {
   const container = todoList.querySelector("ul");
@@ -14,6 +14,10 @@ function showTodos() {
     .join("");
   container.innerHTML = content;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  showTodos();
+});
 todoList.addEventListener("submit", (e) => {
   e.preventDefault();
   const input = todoList.querySelector("input");
